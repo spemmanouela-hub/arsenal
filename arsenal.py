@@ -889,7 +889,7 @@ async def on_ready():
         await update_voice_channels(guild)
 
     await bot.change_presence(
-        activity=discord.Game(name="Arsenal PvP| Roblox")
+        activity=discord.Game(name="Arsenal PvP | Roblox")
     )
 
     print("Bot is fully online and ready.")
