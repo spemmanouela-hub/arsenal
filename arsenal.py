@@ -553,7 +553,7 @@ class MainTicketPanel(discord.ui.View):
 # JOB TICKET SELECT (CALLBACK)
 # -------------------------------
 
-class JobTicketSelect(discord.ui.Select):
+class BuyTicketSelect(discord.ui.Select):
     def __init__(self):
         options = [
             discord.SelectOption(label="Donate", emoji="💸"),
@@ -799,7 +799,7 @@ async def panel(ctx):
         return await ctx.reply("❌ Δεν έχεις δικαίωμα να χρησιμοποιήσεις αυτή την εντολή.")
 
     embed = discord.Embed(
-        title="📌 Emergency Greece Roleplay — Command Panel",
+        title="📌 Arsenal PvP — Command Panel",
         description="Όλες οι βασικές εντολές του bot.",
         color=discord.Color.dark_gray()
     )
