@@ -57,8 +57,8 @@ DUTY_ROLE_ID = 1487882410543808583
 AUTOROLE_ID = 1487822615149154485
 
 # CATEGORY IDs
-MAIN_TICKET_CATEGORY_ID = 1487882704786690088
-BUY_TICKET_CATEGORY_ID = 1487892911990378616
+MAIN_TICKET_CATEGORY_ID = 1487892911990378616
+BUY_TICKET_CATEGORY_ID = 1487896129982169168
 
 # TEMP VOICE
 TEMP_VOICE_CATEGORY_ID = 1487810803796283703
@@ -584,17 +584,17 @@ class BuyTicketSelect(discord.ui.Select):
 
         if self.values[0] == "Donate pack":
             roles_ids = [BUY_MANAGER_ID, OWNER_ID, CEO_ID]
-            name = f"civilian-{author.name}".replace(" ", "-").lower()
+            name = f"Donate-pack-{author.name}".replace(" ", "-").lower()
             ticket_type = "Donate Pack"
 
         elif self.values[0] == "claim your reward":
             roles_ids = [BUY_MANAGER_ID, OWNER_ID, CEO_ID]
-            name = f"criminal-{author.name}".replace(" ", "-").lower()
+            name = f"Reward-{author.name}".replace(" ", "-").lower()
             ticket_type = "Claim Reward"
 
         else:
             roles_ids = [BUY_MANAGER_ID, OWNER_ID, CEO_ID]
-            name = f"anticheat-{author.name}".replace(" ", "-").lower()
+            name = f"Donate-{author.name}".replace(" ", "-").lower()
             ticket_type = "Donate"
 
         for rid in roles_ids:
@@ -608,7 +608,7 @@ class BuyTicketSelect(discord.ui.Select):
             name=name,
             category=category,
             overwrites=overwrites,
-            reason=f"Job ticket created by {author} ({ticket_type})"
+            reason=f"Buy ticket created by {author} ({ticket_type})"
         )
 
         embed = discord.Embed(
@@ -634,7 +634,7 @@ class BuyTicketSelect(discord.ui.Select):
             await log_channel.send(embed=log_embed)
 
         await interaction.response.send_message(
-            f"Το job ticket σου δημιουργήθηκε: {channel.mention}",
+            f"Το buy ticket σου δημιουργήθηκε: {channel.mention}",
             ephemeral=True
         )
 # -------------------------------
